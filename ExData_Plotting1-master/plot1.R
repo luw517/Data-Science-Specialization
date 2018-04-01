@@ -1,0 +1,5 @@
+data<-read.table("household_power_consumption.txt",header=TRUE,sep=";", colClasses=c("character","character","double", "double","double","double","double","double","numeric"), na.strings="?")
+data_sub<-subset(data, data$Date=="1/2/2007"|data$Date=="2/2/2007")
+png('./Desktop plot1.png')
+hist(data_sub$Global_active_power,main="Global Active Power",ylab="Frequency",xlab="Global Active Power (kilowatts)",col="red")
+dev.off()

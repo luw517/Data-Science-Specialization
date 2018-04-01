@@ -1,0 +1,5 @@
+NEI <- readRDS("~/Exploratory_Data_Analysis/Assignment_2/summarySCC_PM25.rds")
+SCC <- readRDS("~/Exploratory_Data_Analysis/Assignment_2/Source_Classification_Code.rds")
+data <- subset(NEI, fips == 24510 & type == 'ON-ROAD')
+g<-ggplot(data=data, aes(year, Emissions))
+g+geom_boxplot(aes(group=year))+ylab("emissions from motor vehicle sources in Baltimore City")
